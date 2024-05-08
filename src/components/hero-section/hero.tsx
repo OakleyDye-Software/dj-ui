@@ -28,6 +28,7 @@ const HeroSection: React.FC = () => {
                     width: 'calc(100vw - 50px)',
                     mx: 10,
                     px: 10,
+                    mt: 5,
                     background: 'white',
                     borderRadius: '20px'
                 }}
