@@ -27,9 +27,9 @@ const HeroSection: React.FC = () => {
                     backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 }}
             />
-            <Box sx={{ zIndex: 1, textAlign: 'center' }}>
+            <Box sx={{ zIndex: 1, ml: 10, textAlign: 'left' }}>
                 <Typography variant="h1" component="h1" gutterBottom>
-                    Welcome to the Hero Section
+                    Elevate your event with DJ OXLEY
                 </Typography>
                 <Typography variant="h4" component="h2" gutterBottom>
                     Discover the amazing features of our website

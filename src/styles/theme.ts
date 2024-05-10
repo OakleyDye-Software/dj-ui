@@ -14,6 +14,9 @@ export const themeOptions: ThemeOptions = {
     h1: {
       fontFamily: 'Bungee Hairline',
     },
+    h6: {
+      fontFamily: 'Bungee Hairline',
+    },
     fontFamily: 'Big Shoulders Text Variable',
   },
 };

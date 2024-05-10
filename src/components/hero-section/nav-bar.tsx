@@ -7,14 +7,14 @@ const NavBar: React.FC = () => {
         <React.Fragment>
             <AppBar sx={{ backgroundColor: 'black' }}>
                 <Toolbar sx={{ justifyContent: 'flex-start' }}>
-                    <Typography variant="h6" align='left' component="div" sx={{ flexGrow: 1 }}>
-                        Logo
+                    <Typography variant="h6" component='div' fontWeight='bold' align='left' sx={{ flexGrow: 1 }}>
+                        DJ OXLEY
                     </Typography>
-                    <Button color="inherit">Menu Item 1</Button>
-                    <Button color="inherit">Menu Item 2</Button>
-                    <Button color="inherit">Menu Item 3</Button>
-                    <Button color="inherit">Menu Item 4</Button>
-                    <Button color="inherit">Call to Action</Button>
+                    <Button color="inherit" sx={{ mx: 0.5 }}>Menu Item 1</Button>
+                    <Button color="inherit" sx={{ mx: 0.5 }}>Menu Item 2</Button>
+                    <Button color="inherit" sx={{ mx: 0.5 }}>Menu Item 3</Button>
+                    <Button color="inherit" sx={{ mx: 0.5 }}>Menu Item 4</Button>
+                    <Button color="primary" variant='contained'>Call to Action</Button>
                 </Toolbar>
             </AppBar>
         </React.Fragment>
