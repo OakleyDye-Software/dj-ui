@@ -5,11 +5,13 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import '@fontsource-variable/big-shoulders-text';
+import '@fontsource/bungee-hairline';
 import HeroSection from './components/hero-section/hero';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { themeOptions } from './styles/theme';
 
-const theme = createTheme({
-});
+const theme = createTheme(themeOptions);
 
 function App() {
   return (

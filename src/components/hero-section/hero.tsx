@@ -5,47 +5,45 @@ import NavBar from './nav-bar';
 
 const HeroSection: React.FC = () => {
     return (  
-        <Box 
-            sx={{ 
-                h: '100vh', 
-                w: '100vw', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'center', 
-                alignItems: 'center', 
-                minHeight: '100vh',
-                background: 'black'
+        <Box
+            sx={{
+                position: 'relative',
+                height: '100vh',
+                backgroundImage: `url(${hero})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
             }}
         >
-            <NavBar />
             <Box
-                sx={{ 
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    justifyContent: 'center', 
-                    alignItems: 'center', 
-                    minHeight: '80vh',
-                    width: 'calc(100vw - 50px)',
-                    mx: 10,
-                    px: 10,
-                    mt: 5,
-                    background: 'white',
-                    borderRadius: '20px'
+                sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 }}
-            >
-                <Box>
-                    <Typography variant='h1'>DJ Services</Typography>
-                </Box>
-                <Box>
-                    <Typography variant='h4'>Book today!</Typography>
-                </Box>
-                <Box sx={{ display: 'flex' }}>
-                    <ButtonGroup>
-                        <Button variant='outlined'>Register</Button>
-                        <Button variant='contained' sx={{ color: 'primary' }}>Contact</Button>
-                    </ButtonGroup>
-                </Box>
+            />
+            <Box sx={{ zIndex: 1, textAlign: 'center' }}>
+                <Typography variant="h1" component="h1" gutterBottom>
+                    Welcome to the Hero Section
+                </Typography>
+                <Typography variant="h4" component="h2" gutterBottom>
+                    Discover the amazing features of our website
+                </Typography>
+                <ButtonGroup>
+                    <Button variant="contained" color="primary">
+                        Get Started
+                    </Button>
+                    <Button variant="outlined" color="primary">
+                        Learn More
+                    </Button>
+                </ButtonGroup>
             </Box>
+            <NavBar />
         </Box>
     );
 }
