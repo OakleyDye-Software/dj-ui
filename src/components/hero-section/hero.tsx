@@ -1,7 +1,8 @@
 import { Box, Button, ButtonGroup, Typography } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import * as React from 'react';
 import hero from '../../images/hero_image.jpg';
-import NavBar from './nav-bar';
+import BouncingIcon from '../common/bounce-icon';
 
 const HeroSection: React.FC = () => {
     return (  
@@ -17,6 +18,14 @@ const HeroSection: React.FC = () => {
                 justifyContent: 'center',
             }}
         >
+            <Box sx={{ zIndex: 1, position: 'absolute', top: '1rem', left: '1rem'}}>
+                <img src={'test'} alt="DJ OXLEY" width={100} height={100} />
+            </Box>
+            <Box sx={{ zIndex: 1, position: 'absolute', top: '1rem', right: '1rem', display: 'flex', alignItems: 'center' }}>
+                <MenuIcon sx={{ color: 'white', fontSize: 'inherit' }}/>
+                <Typography variant="h4" component="h4" sx={{ color: 'white', ml: 1 }}>Menu</Typography>
+            </Box>
+            
             <Box
                 sx={{
                     position: 'absolute',
@@ -27,23 +36,26 @@ const HeroSection: React.FC = () => {
                     backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 }}
             />
-            <Box sx={{ zIndex: 1, ml: 10, textAlign: 'left' }}>
+
+            <Box sx={{ zIndex: 1, textAlign: 'center' }}>
                 <Typography variant="h1" component="h1" gutterBottom>
                     Elevate your event with DJ OXLEY
                 </Typography>
-                <Typography variant="h4" component="h2" gutterBottom>
-                    Discover the amazing features of our website
+                <Button variant="contained" color="primary" sx={{ px: 3, py: 1.2, fontSize: '1.5rem', borderRadius: 0 }}>
+                    Book Now
+                </Button>
+            </Box>
+
+            <Box sx={{ position: 'absolute', bottom: '1rem', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' }}>
+                <Typography variant="body1" component="p" sx={{ color: 'white' }}>
+                    Scroll down
                 </Typography>
-                <ButtonGroup>
-                    <Button variant="contained" color="primary">
-                        Get Started
-                    </Button>
-                    <Button variant="outlined" color="primary">
-                        Learn More
+                <ButtonGroup variant="text" color="primary" aria-label="scroll down">
+                    <Button>
+                        <BouncingIcon />
                     </Button>
                 </ButtonGroup>
             </Box>
-            <NavBar />
         </Box>
     );
 }
