@@ -11,12 +11,9 @@ export const themeOptions: ThemeOptions = {
     },
   },
   typography: {
-    h1: {
-      fontFamily: 'Bungee Hairline',
+    fontFamily: 'Bungee',
+    body2: {
+      fontFamily: 'Roboto',
     },
-    h6: {
-      fontFamily: 'Bungee Hairline',
-    },
-    fontFamily: 'Big Shoulders Text Variable',
   },
 };

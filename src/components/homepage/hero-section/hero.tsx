@@ -1,8 +1,8 @@
 import { Box, Button, ButtonGroup, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import * as React from 'react';
-import hero from '../../images/hero_image.jpg';
-import BouncingIcon from '../common/bounce-icon';
+import hero from '../../../images/hero_image.jpg';
+import BouncingIcon from '../../common/bounce-icon';
 
 const HeroSection: React.FC = () => {
     return (  
@@ -19,11 +19,12 @@ const HeroSection: React.FC = () => {
             }}
         >
             <Box sx={{ zIndex: 1, position: 'absolute', top: '1rem', left: '1rem'}}>
-                <img src={'test'} alt="DJ OXLEY" width={100} height={100} />
+                {/* <img src={'test'} alt="DJ OXLEY" width={100} height={100} /> */}
+                <Typography variant="h4" component="h4" sx={{ ml: 1 }}>DJ OXLEY</Typography>
             </Box>
             <Box sx={{ zIndex: 1, position: 'absolute', top: '1rem', right: '1rem', display: 'flex', alignItems: 'center' }}>
-                <MenuIcon sx={{ color: 'white', fontSize: 'inherit' }}/>
-                <Typography variant="h4" component="h4" sx={{ color: 'white', ml: 1 }}>Menu</Typography>
+                <MenuIcon sx={{ color: 'white', fontSize: 45 }}/>
+                <Typography variant="h4" component="h4" sx={{ ml: 1 }}>Menu</Typography>
             </Box>
             
             <Box
@@ -47,7 +48,7 @@ const HeroSection: React.FC = () => {
             </Box>
 
             <Box sx={{ position: 'absolute', bottom: '1rem', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' }}>
-                <Typography variant="body1" component="p" sx={{ color: 'white' }}>
+                <Typography variant="body1" component="p">
                     Scroll down
                 </Typography>
                 <ButtonGroup variant="text" color="primary" aria-label="scroll down">
