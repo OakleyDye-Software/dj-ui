@@ -14,13 +14,11 @@ function App() {
     <Fragment>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="App">
           <BrowserRouter>
             <Routes>
               <Route index element={<Homepage />} />
             </Routes>
           </BrowserRouter>
-        </div>
       </ThemeProvider>
     </Fragment>
   );
