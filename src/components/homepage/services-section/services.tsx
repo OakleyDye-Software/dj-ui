@@ -4,13 +4,12 @@ import serviceService from '../../../services/serviceService';
 import { IServiceSummary } from '../../../interfaces/IServiceSummary';
 
 const ServicesSection: React.FC = () => {
-    const [services, setServices] = React.useState([]);
+    const [services, setServices] = React.useState<IServiceSummary[]>([]);
 
     React.useEffect(() => {
         const getServices = async () => {
             await serviceService.getServiceSummaries().then((data) => {
                 setServices(data);
-                console.log(data);
             });
         }
 
