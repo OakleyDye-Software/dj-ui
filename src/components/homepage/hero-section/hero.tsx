@@ -32,7 +32,7 @@ const HeroSection: React.FC = () => {
 
             <Box sx={{ zIndex: 1, textAlign: 'center' }}>
                 <Typography variant="h1" component="h1" gutterBottom>
-                    Elevate your event with DJ OXLEY
+                    Elevate your event with CD ENTERTAINMENT
                 </Typography>
                 <Button variant="contained" color="primary" sx={{ px: 3, py: 1.2, fontSize: '1.5rem', borderRadius: 0 }}>
                     Book Now

@@ -3,25 +3,28 @@ import HeroSection from './hero-section/hero';
 import MenuBar from '../common/menu-bar';
 import '../common/menu-bar.css';
 import ServicesSection from './services-section/services';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
 
 const Homepage: React.FC = () => {
+    const { scrollY } = useScroll();
     const [currentSection, setCurrentSection] = React.useState<string>('hero');
 
-    React.useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setCurrentSection(entry.target.id);
-                    console.log(entry.target.id);
-                }
-            });
-        },
-        { threshold: 0.7 });
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => observer.observe(section));
+    useMotionValueEvent(scrollY, 'change', (latest) => {
+        const heroSection = document.getElementById('hero');
+        const serviceSection = document.getElementById('service');
 
-        return () => sections.forEach(section => observer.unobserve(section));
-    }, []);
+        const heroSectionHeight = heroSection?.offsetHeight || 0;
+        const serviceSectionHeight = serviceSection?.offsetHeight || 0;
+
+        const heroSectionThreshold = heroSectionHeight * 0.9;
+        const serviceSectionThreshold = heroSectionHeight + serviceSectionHeight * 0.9;
+
+        if (latest < heroSectionThreshold) {
+            setCurrentSection('hero');
+        } else if (latest < serviceSectionThreshold) {
+            setCurrentSection('service');
+        }
+    });
 
     return (  
         <React.Fragment>
