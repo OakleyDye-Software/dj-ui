@@ -6,6 +6,7 @@ import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { themeOptions } from './styles/theme';
 import Homepage from './components/homepage/homepage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// require('dotenv').config();
 
 const theme = createTheme(themeOptions);
 

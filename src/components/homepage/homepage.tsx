@@ -16,8 +16,8 @@ const Homepage: React.FC = () => {
         const heroSectionHeight = heroSection?.offsetHeight || 0;
         const serviceSectionHeight = serviceSection?.offsetHeight || 0;
 
-        const heroSectionThreshold = heroSectionHeight * 0.9;
-        const serviceSectionThreshold = heroSectionHeight + serviceSectionHeight * 0.9;
+        const heroSectionThreshold = heroSectionHeight * 0.95;
+        const serviceSectionThreshold = heroSectionHeight + (serviceSectionHeight * 0.95);
 
         if (latest < heroSectionThreshold) {
             setCurrentSection('hero');
