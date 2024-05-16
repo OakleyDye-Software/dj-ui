@@ -6,6 +6,7 @@ import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { themeOptions } from './styles/theme';
 import Homepage from './components/homepage/homepage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import DJProvider from './logic/state/GlobalContext';
 // require('dotenv').config();
 
 const theme = createTheme(themeOptions);
@@ -16,9 +17,11 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
           <BrowserRouter>
-            <Routes>
-              <Route index element={<Homepage />} />
-            </Routes>
+            <DJProvider>
+              <Routes>
+                <Route index element={<Homepage />} />
+              </Routes>
+            </DJProvider>
           </BrowserRouter>
       </ThemeProvider>
     </Fragment>

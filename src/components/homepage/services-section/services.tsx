@@ -2,14 +2,15 @@ import { Box, Typography } from '@mui/material';
 import * as React from 'react';
 import serviceService from '../../../services/serviceService';
 import { IServiceSummary } from '../../../interfaces/IServiceSummary';
+import { useDJContext } from '../../../logic/state/GlobalContext';
 
 const ServicesSection: React.FC = () => {
-    const [services, setServices] = React.useState<IServiceSummary[]>([]);
+    const { services, dispatch } = useDJContext();
 
     React.useEffect(() => {
         const getServices = async () => {
             await serviceService.getServiceSummaries().then((data) => {
-                setServices(data);
+                dispatch!({ type: 'SET_SERVICES', services: data as IServiceSummary[] });
             });
         }
 
