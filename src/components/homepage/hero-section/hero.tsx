@@ -34,12 +34,29 @@ const HeroSection: React.FC = () => {
                 <Typography variant="h1" component="h1" gutterBottom>
                     Elevate your event with CD ENTERTAINMENT
                 </Typography>
-                <Button variant="contained" color="primary" sx={{ px: 3, py: 1.2, fontSize: '1.5rem', borderRadius: 0 }}>
+                <Button 
+                    variant="contained" 
+                    color="primary" 
+                    sx={{ 
+                        px: 3, 
+                        py: 1.2, 
+                        fontSize: '1.5rem', 
+                        borderRadius: 0 
+                        }}
+                >
                     Book Now
                 </Button>
             </Box>
 
-            <Box sx={{ position: 'absolute', bottom: '1rem', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' }}>
+            <Box 
+                sx={{ 
+                    position: 'absolute', 
+                    bottom: '1rem', 
+                    left: '50%', 
+                    transform: 'translateX(-50%)', 
+                    textAlign: 'center' 
+                }}
+            >
                 <Typography variant="body1" component="p">
                     Scroll down
                 </Typography>

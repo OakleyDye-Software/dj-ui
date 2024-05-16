@@ -5,7 +5,6 @@ const getHttpService = () => {
     const service = axios.create({
         baseURL: axios.defaults.baseURL
     });
-    console.log(service.defaults.baseURL);
     return {
         httpService: {
             get: service.get,

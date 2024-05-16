@@ -1,4 +1,3 @@
-import { IServiceSummary } from "../interfaces/IServiceSummary";
 import getHttpService from "./httpService";
 
 const { httpService } = getHttpService();
