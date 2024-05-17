@@ -7,6 +7,8 @@ import { themeOptions } from './styles/theme';
 import Homepage from './components/homepage/homepage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DJProvider from './logic/state/GlobalContext';
+import { SnackbarProvider } from 'notistack';
+import { SnackbarConfigurator } from './components/common/snackbarConfig';
 // require('dotenv').config();
 
 const theme = createTheme(themeOptions);
@@ -16,13 +18,16 @@ function App() {
     <Fragment>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-          <BrowserRouter>
-            <DJProvider>
-              <Routes>
-                <Route index element={<Homepage />} />
-              </Routes>
-            </DJProvider>
-          </BrowserRouter>
+          <SnackbarProvider maxSnack={3}>
+            <SnackbarConfigurator />
+            <BrowserRouter>
+              <DJProvider>
+                <Routes>
+                  <Route index element={<Homepage />} />
+                </Routes>
+              </DJProvider>
+            </BrowserRouter>
+        </SnackbarProvider>
       </ThemeProvider>
     </Fragment>
   );
