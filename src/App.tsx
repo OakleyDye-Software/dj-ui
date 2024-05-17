@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DJProvider from './logic/state/GlobalContext';
 import { SnackbarProvider } from 'notistack';
 import { SnackbarConfigurator } from './components/common/snackbarConfig';
+import Router from './routing/router';
 // require('dotenv').config();
 
 const theme = createTheme(themeOptions);
@@ -22,9 +23,7 @@ function App() {
             <SnackbarConfigurator />
             <BrowserRouter>
               <DJProvider>
-                <Routes>
-                  <Route index element={<Homepage />} />
-                </Routes>
+                <Router />
               </DJProvider>
             </BrowserRouter>
         </SnackbarProvider>
