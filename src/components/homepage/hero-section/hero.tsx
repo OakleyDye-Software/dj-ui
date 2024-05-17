@@ -1,7 +1,5 @@
 import { Box, Button, ButtonGroup, Typography } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
 import * as React from 'react';
-import hero from '../../../images/hero_image.jpg';
 import BouncingIcon from '../../common/bounce-icon';
 
 const HeroSection: React.FC = () => {
@@ -10,7 +8,7 @@ const HeroSection: React.FC = () => {
             sx={{
                 position: 'relative',
                 height: '100vh',
-                backgroundImage: `url(${hero})`,
+                backgroundImage: `url(/images/hero_image.jpg)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 display: 'flex',
@@ -26,7 +24,7 @@ const HeroSection: React.FC = () => {
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
                 }}
             />
 

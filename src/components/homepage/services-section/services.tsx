@@ -43,6 +43,9 @@ const ServicesSection: React.FC = () => {
                             key={service.id} 
                             sx={{ 
                                 backgroundColor: 'black', 
+                                backgroundImage: `url(/images/${service.imageUrl})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
                                 color: 'white', 
                                 px: 2, 
                                 py: 10, 
@@ -62,14 +65,14 @@ const ServicesSection: React.FC = () => {
                                     left: 0, 
                                     right: 0, 
                                     height: '0', 
-                                    backgroundColor: 'rgba(0,0,0,0.7)', 
+                                    backgroundColor: 'rgba(0,0,0,0.9)', 
                                     color: 'white', 
                                     transition: '0.3s', 
                                     overflow: 'hidden', 
-                                    px: 2, 
-                                    py: 1 
+                                    px: 2
                                 }}
                             >
+                                <br />
                                 <Typography variant="body1">{service.description}</Typography>
                             </Box>
                         </Box>
