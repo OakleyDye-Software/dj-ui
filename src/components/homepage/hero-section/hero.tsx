@@ -40,7 +40,7 @@ const HeroSection: React.FC = () => {
                         py: 1.2, 
                         fontSize: '1.5rem', 
                         borderRadius: 0 
-                        }}
+                    }}
                 >
                     Book Now
                 </Button>

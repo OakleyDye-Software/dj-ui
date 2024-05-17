@@ -19,6 +19,7 @@ const ServicesSection: React.FC = () => {
     
     return (  
         <React.Fragment>
+            <Typography variant="h2" component="h2" sx={{ textAlign: 'center', pt: 10, pb: 5, backgroundColor: 'white', color: 'black' }}>Our Services</Typography>
             <Box 
                 sx={{ 
                     backgroundColor: 'white', 
