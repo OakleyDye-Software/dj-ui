@@ -1,11 +1,11 @@
 import * as React from 'react';
-import HeroSection from './hero/hero';
-import MenuBar from '../common/menu/menu-bar';
+import HeroSection from './hero';
+import MenuBar from '../common/menu-bar';
 import '../common/menu/menu-bar.css';
-import ServicesSection from './services/services';
+import ServicesSection from './services';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import { useDJContext } from '../../logic/state/GlobalContext';
-import About from './about/about';
+import About from './about';
 
 const Homepage: React.FC = () => {
     const { scrollY } = useScroll();

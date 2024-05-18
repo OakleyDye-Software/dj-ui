@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
 import * as React from 'react';
-import serviceService from '../../../services/serviceService';
-import { IServiceSummary } from '../../../interfaces/IServiceSummary';
-import { useDJContext } from '../../../logic/state/GlobalContext';
+import serviceService from '../../services/serviceService';
+import { IServiceSummary } from '../../interfaces/IServiceSummary';
+import { useDJContext } from '../../logic/state/GlobalContext';
 
 const ServicesSection: React.FC = () => {
     const { services, dispatch } = useDJContext();

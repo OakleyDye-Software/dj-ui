@@ -1,6 +1,6 @@
 import { Box, Button, ButtonGroup, Typography } from '@mui/material';
 import * as React from 'react';
-import BouncingIcon from '../../common/bounce-icon';
+import BouncingIcon from '../common/bounce-icon';
 
 const HeroSection: React.FC = () => {
     return (  

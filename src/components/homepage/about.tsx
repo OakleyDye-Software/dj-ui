@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { useDJContext } from '../../../logic/state/GlobalContext';
-import aboutService from '../../../services/aboutService';
+import { useDJContext } from '../../logic/state/GlobalContext';
+import aboutService from '../../services/aboutService';
 import { Box, Typography } from '@mui/material';
 
 const About: React.FC = () => {
