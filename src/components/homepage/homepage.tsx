@@ -1,7 +1,7 @@
 import * as React from 'react';
 import HeroSection from './hero';
 import MenuBar from '../common/menu-bar';
-import '../common/menu/menu-bar.css';
+import '../common/menu-bar.css';
 import ServicesSection from './services';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import { useDJContext } from '../../logic/state/GlobalContext';
