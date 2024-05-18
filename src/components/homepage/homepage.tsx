@@ -4,10 +4,11 @@ import MenuBar from '../common/menu/menu-bar';
 import '../common/menu/menu-bar.css';
 import ServicesSection from './services/services';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
+import { useDJContext } from '../../logic/state/GlobalContext';
 
 const Homepage: React.FC = () => {
     const { scrollY } = useScroll();
-    const [currentSection, setCurrentSection] = React.useState<string>('hero');
+    const { currentSection, dispatch } = useDJContext();
 
     useMotionValueEvent(scrollY, 'change', (latest) => {
         const heroSection = document.getElementById('hero');
@@ -20,9 +21,9 @@ const Homepage: React.FC = () => {
         const serviceSectionThreshold = heroSectionHeight + (serviceSectionHeight * 0.95);
 
         if (latest < heroSectionThreshold) {
-            setCurrentSection('hero');
+            dispatch!({ type: 'SET_CURRENT_SECTION', currentSection: 'hero' });
         } else if (latest < serviceSectionThreshold) {
-            setCurrentSection('service');
+            dispatch!({ type: 'SET_CURRENT_SECTION', currentSection: 'service' });
         }
     });
 

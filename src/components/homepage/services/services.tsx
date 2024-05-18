@@ -10,7 +10,7 @@ const ServicesSection: React.FC = () => {
     React.useEffect(() => {
         const getServices = async () => {
             await serviceService.getServiceSummaries().then((data) => {
-                dispatch!({ type: 'SET_SERVICES', services: data as IServiceSummary[] });
+                dispatch!({ type: 'SET_SERVICES', services: (data as IServiceSummary[]).sort((a, b) => a.id < b.id ? -1 : 1) });
             });
         }
 
@@ -36,7 +36,8 @@ const ServicesSection: React.FC = () => {
                         flexDirection: 'row', 
                         flexWrap: 'wrap', 
                         justifyContent: 'center', 
-                        gap: 5 
+                        gap: 5,
+                        px: '10%'
                     }}
                 >
                     {services.map((service) => (
