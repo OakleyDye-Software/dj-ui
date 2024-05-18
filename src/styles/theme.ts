@@ -9,6 +9,9 @@ export const themeOptions: ThemeOptions = {
     secondary: {
       main: '#95150c',
     },
+    background: {
+      default: 'black'
+    }
   },
   typography: {
     fontFamily: 'Bungee',

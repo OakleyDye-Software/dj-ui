@@ -1,13 +1,16 @@
+import { IAbout } from "../../interfaces/IAbout";
 import { IServiceSummary } from "../../interfaces/IServiceSummary";
 
 export interface DJState {
     currentSection: string;
+    about: IAbout | null;
     services: IServiceSummary[];
     dispatch?: React.Dispatch<DJAction>;
 }
 
 export const initialState: DJState = {
     currentSection: 'hero',
+    about: null,
     services: []
 };
 
@@ -21,9 +24,15 @@ interface ISetCurrentSection {
     currentSection: string;
 }
 
+interface ISetAbout {
+    type: 'SET_ABOUT';
+    about: IAbout;
+}
+
 export type DJAction = 
     | ISetServices
-    | ISetCurrentSection;
+    | ISetCurrentSection
+    | ISetAbout;
 
 export const djReducer = (state: DJState, action: DJAction): DJState => {
     switch (action.type) {
@@ -36,6 +45,11 @@ export const djReducer = (state: DJState, action: DJAction): DJState => {
             return {
                 ...state,
                 currentSection: action.currentSection
+            };
+        case 'SET_ABOUT':
+            return {
+                ...state,
+                about: action.about
             };
         default:
             return state;
