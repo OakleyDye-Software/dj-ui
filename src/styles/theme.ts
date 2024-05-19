@@ -15,8 +15,11 @@ export const themeOptions: ThemeOptions = {
   },
   typography: {
     fontFamily: 'Bungee',
-    body2: {
+    body1: {
       fontFamily: 'Roboto',
     },
+    // body2: {
+    //   fontFamily: 'Roboto',
+    // },
   },
 };

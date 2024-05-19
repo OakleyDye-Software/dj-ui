@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
                     textAlign: 'center' 
                 }}
             >
-                <Typography variant="body1" component="p">
+                <Typography variant="body2" component="p">
                     Scroll down
                 </Typography>
                 <ButtonGroup variant="text" color="primary" aria-label="scroll down">
