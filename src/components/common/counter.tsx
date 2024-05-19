@@ -14,9 +14,10 @@ const Counter: React.FC<CounterProps> = ({ count, title, showPlusIcon }) => {
     const [currentCount, setCurrentCount] = React.useState(0);
     const { ref, inView } = useInView({
         triggerOnce: true,
-        threshold: 0.25,
-        delay: 100
+        threshold: 0.75,
     });
+    const totalDuration = 2000;
+    const intervalDuration = totalDuration / count;
 
     React.useEffect(() => {
         if (inView) {
@@ -24,10 +25,16 @@ const Counter: React.FC<CounterProps> = ({ count, title, showPlusIcon }) => {
             let interval: NodeJS.Timeout | number = 0; // Explicitly type interval as NodeJS.Timeout | number
             if (currentCount < count) {
                 interval = setInterval(() => {
-                    setCurrentCount((prevCount) => prevCount + 1);
-                }, count > 10 ? 10: 50);
+                    setCurrentCount((prevCount) => {
+                        if (prevCount < count) {
+                            return prevCount + 1;
+                        } else {
+                            clearInterval(interval as NodeJS.Timeout);
+                            return count;
+                        }
+                    });
+                }, intervalDuration);
             }
-            return () => clearInterval(interval as NodeJS.Timeout);
         }
     }, [inView, count, currentCount]);
 
