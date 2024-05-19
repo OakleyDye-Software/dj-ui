@@ -6,6 +6,7 @@ import ServicesSection from './services';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import { useDJContext } from '../../logic/state/GlobalContext';
 import About from './about';
+import Counters from './counters';
 
 const Homepage: React.FC = () => {
     const { scrollY } = useScroll();
@@ -39,6 +40,7 @@ const Homepage: React.FC = () => {
             <div id="hero" className='section'><HeroSection /></div>
             <div id="about" className='section'><About /></div>
             <div id="service" className='section'><ServicesSection /></div>
+            <div id="counter" className='section'><Counters /></div>
         </React.Fragment>
     );
 }

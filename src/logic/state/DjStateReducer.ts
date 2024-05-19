@@ -1,17 +1,20 @@
 import { IAbout } from "../../interfaces/IAbout";
+import { ICounter } from "../../interfaces/ICounter";
 import { IServiceSummary } from "../../interfaces/IServiceSummary";
 
 export interface DJState {
     currentSection: string;
     about: IAbout | null;
     services: IServiceSummary[];
+    counters: ICounter[];
     dispatch?: React.Dispatch<DJAction>;
 }
 
 export const initialState: DJState = {
     currentSection: 'hero',
     about: null,
-    services: []
+    services: [],
+    counters: []
 };
 
 interface ISetServices {
@@ -29,10 +32,16 @@ interface ISetAbout {
     about: IAbout;
 }
 
+interface ISetCounters {
+    type: 'SET_COUNTERS';
+    counters: ICounter[];
+}
+
 export type DJAction = 
     | ISetServices
     | ISetCurrentSection
-    | ISetAbout;
+    | ISetAbout
+    | ISetCounters;
 
 export const djReducer = (state: DJState, action: DJAction): DJState => {
     switch (action.type) {
@@ -50,6 +59,11 @@ export const djReducer = (state: DJState, action: DJAction): DJState => {
             return {
                 ...state,
                 about: action.about
+            };
+        case 'SET_COUNTERS':
+            return {
+                ...state,
+                counters: action.counters
             };
         default:
             return state;
