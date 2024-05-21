@@ -6,7 +6,7 @@ import Counter from '../common/counter';
 import { ICounter } from '../../interfaces/ICounter';
 
 const Counters: React.FC = () => {
-    const { counters, dispatch } = useDJContext();
+    const { isMobile, counters, dispatch } = useDJContext();
 
     React.useEffect(() => {
         const getCounters = async () => {
@@ -20,7 +20,7 @@ const Counters: React.FC = () => {
 
     return (  
         <React.Fragment>
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', py: 10, gap: 10 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mx: isMobile ? 10 : undefined, py: 10, gap: isMobile ? 5 : 10 }}>
                 {counters?.map((counter) => (
                     <Counter count={counter.value} title={counter.name} showPlusIcon={counter.showPlus} />
                 ))}

@@ -3,6 +3,7 @@ import { ICounter } from "../../interfaces/ICounter";
 import { IServiceSummary } from "../../interfaces/IServiceSummary";
 
 export interface DJState {
+    isMobile: boolean;
     currentSection: string;
     about: IAbout | null;
     services: IServiceSummary[];
@@ -11,11 +12,17 @@ export interface DJState {
 }
 
 export const initialState: DJState = {
+    isMobile: false,
     currentSection: 'hero',
     about: null,
     services: [],
     counters: []
 };
+
+interface ISetIsMobile {
+    type: 'SET_IS_MOBILE';
+    isMobile: boolean;
+}
 
 interface ISetServices {
     type: 'SET_SERVICES';
@@ -38,6 +45,7 @@ interface ISetCounters {
 }
 
 export type DJAction = 
+    | ISetIsMobile
     | ISetServices
     | ISetCurrentSection
     | ISetAbout
@@ -45,6 +53,11 @@ export type DJAction =
 
 export const djReducer = (state: DJState, action: DJAction): DJState => {
     switch (action.type) {
+        case 'SET_IS_MOBILE':
+            return {
+                ...state,
+                isMobile: action.isMobile
+            };
         case 'SET_SERVICES':
             return {
                 ...state,

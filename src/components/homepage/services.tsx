@@ -5,7 +5,7 @@ import { IServiceSummary } from '../../interfaces/IServiceSummary';
 import { useDJContext } from '../../logic/state/GlobalContext';
 
 const ServicesSection: React.FC = () => {
-    const { services, dispatch } = useDJContext();
+    const { isMobile, services, dispatch } = useDJContext();
 
     React.useEffect(() => {
         const getServices = async () => {
@@ -19,7 +19,7 @@ const ServicesSection: React.FC = () => {
     
     return (  
         <React.Fragment>
-            <Typography variant="h2" component="h2" sx={{ textAlign: 'center', pt: 10, pb: 5, backgroundColor: 'white', color: 'black' }}>Our Services</Typography>
+            <Typography variant={isMobile ? 'h4' : 'h2'} component="h2" sx={{ textAlign: 'center', pt: 10, pb: 5, backgroundColor: 'white', color: 'black' }}>Our Services</Typography>
             <Box 
                 sx={{ 
                     backgroundColor: 'white', 
@@ -59,7 +59,7 @@ const ServicesSection: React.FC = () => {
                             onMouseEnter={(e) => (e.currentTarget.children[1] as HTMLElement).style.height = '70%'}
                             onMouseLeave={(e) => (e.currentTarget.children[1] as HTMLElement).style.height = '0'}
                         >
-                            <Typography variant="h4" component="h4">{service.name}</Typography>
+                            <Typography variant={isMobile ? 'h6' : 'h4'} component="h4">{service.name}</Typography>
                             <Box 
                                 sx={{ 
                                     position: 'absolute', 

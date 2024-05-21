@@ -7,10 +7,24 @@ import { useMotionValueEvent, useScroll } from 'framer-motion';
 import { useDJContext } from '../../logic/state/GlobalContext';
 import About from './about';
 import Counters from './counters';
+import ContactSection from './contact-section';
 
 const Homepage: React.FC = () => {
     const { scrollY } = useScroll();
     const { currentSection, dispatch } = useDJContext();
+
+    React.useEffect(() => {
+        const checkMobile = () => {
+            dispatch!({ type: 'SET_IS_MOBILE', isMobile: window.innerWidth <= 768 });
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => {
+            window.removeEventListener('resize', checkMobile);
+        };
+    }, []);
 
     useMotionValueEvent(scrollY, 'change', (latest) => {
         const heroSection = document.getElementById('hero');
@@ -46,6 +60,7 @@ const Homepage: React.FC = () => {
             <div id="about" className='section'><About /></div>
             <div id="service" className='section'><ServicesSection /></div>
             <div id="counter" className='section'><Counters /></div>
+            <div id="contact" className='section'><ContactSection /></div>
         </React.Fragment>
     );
 }

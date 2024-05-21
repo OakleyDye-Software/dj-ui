@@ -4,7 +4,7 @@ import aboutService from '../../services/aboutService';
 import { Box, Typography } from '@mui/material';
 
 const About: React.FC = () => {
-    const { about, dispatch } = useDJContext();
+    const { isMobile, about, dispatch } = useDJContext();
 
     React.useEffect(() => {
         const getAbout = async () => {
@@ -20,8 +20,8 @@ const About: React.FC = () => {
 
     return (  
         <React.Fragment>
-            <Typography variant='h2' component='h2' sx={{ textAlign: 'center', pt: 10, pb: 5 }}>About</Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', px: '20%', pb: 10, gap: 5, justifyContent: 'center' }}>
+            <Typography variant={isMobile ? 'h4' : 'h2'} component='h2' sx={{ textAlign: 'center', pt: 10, pb: 5 }}>About</Typography>
+            <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', px: '20%', pb: 10, gap: 5, justifyContent: 'center' }}>
                 <Box>
                     <Typography variant='body1'>{about?.description}</Typography>
                 </Box>
