@@ -31,16 +31,19 @@ const Homepage: React.FC = () => {
         const aboutSection = document.getElementById('about');
         const serviceSection = document.getElementById('service');
         const counterSection = document.getElementById('counter');
+        const contactSection = document.getElementById('contact');
 
         const heroSectionHeight = heroSection?.offsetHeight || 0;
         const aboutSectionHeight = aboutSection?.offsetHeight || 0;
         const serviceSectionHeight = serviceSection?.offsetHeight || 0;
         const counterSectionHeight = counterSection?.offsetHeight || 0;
+        const contactSectionHeight = contactSection?.offsetHeight || 0;
 
         const heroSectionThreshold = heroSectionHeight * 0.95;
         const aboutSectionThreshold = heroSectionHeight + (aboutSectionHeight * 0.95);
         const serviceSectionThreshold = heroSectionHeight + aboutSectionHeight + (serviceSectionHeight * 0.95);
         const counterSectionThreshold = heroSectionHeight + aboutSectionHeight + serviceSectionHeight + (counterSectionHeight * 0.95);
+        const contactSectionThreshold = heroSectionHeight + aboutSectionHeight + serviceSectionHeight + counterSectionHeight + (contactSectionHeight * 0.95);
 
         if (latest < heroSectionThreshold) {
             dispatch!({ type: 'SET_CURRENT_SECTION', currentSection: 'hero' });
@@ -50,6 +53,8 @@ const Homepage: React.FC = () => {
             dispatch!({ type: 'SET_CURRENT_SECTION', currentSection: 'service' });
         } else if (latest < counterSectionThreshold) {
             dispatch!({ type: 'SET_CURRENT_SECTION', currentSection: 'counter' });
+        } else if (latest < contactSectionThreshold) {
+            dispatch!({ type: 'SET_CURRENT_SECTION', currentSection: 'contact' });
         }
     });
 
