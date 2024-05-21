@@ -16,7 +16,9 @@ const ContactForm: React.FC = () => {
             });
         };
 
-        getEventTypes();
+        if (eventTypes.length === 0) {
+            getEventTypes();
+        }
     }, []);
 
     const handleSubmit = (event: React.FormEvent) => {
