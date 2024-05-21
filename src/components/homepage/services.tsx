@@ -14,7 +14,9 @@ const ServicesSection: React.FC = () => {
             });
         }
 
-        getServices();
+        if (services.length === 0){
+            getServices();
+        }
     }, []);
     
     return (  

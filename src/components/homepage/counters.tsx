@@ -15,7 +15,9 @@ const Counters: React.FC = () => {
             });
         };
 
-        getCounters();
+        if (counters.length === 0) {
+            getCounters();
+        }
     }, []);
 
     return (  
