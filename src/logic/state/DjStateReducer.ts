@@ -1,5 +1,6 @@
 import { IAbout } from "../../interfaces/IAbout";
 import { ICounter } from "../../interfaces/ICounter";
+import { IEventType } from "../../interfaces/IEventType";
 import { IServiceSummary } from "../../interfaces/IServiceSummary";
 
 export interface DJState {
@@ -8,6 +9,7 @@ export interface DJState {
     about: IAbout | null;
     services: IServiceSummary[];
     counters: ICounter[];
+    eventTypes: IEventType[];
     dispatch?: React.Dispatch<DJAction>;
 }
 
@@ -16,7 +18,8 @@ export const initialState: DJState = {
     currentSection: 'hero',
     about: null,
     services: [],
-    counters: []
+    counters: [],
+    eventTypes: []
 };
 
 interface ISetIsMobile {
@@ -44,12 +47,18 @@ interface ISetCounters {
     counters: ICounter[];
 }
 
+interface ISetEventTypes {
+    type: 'SET_EVENT_TYPES';
+    eventTypes: IEventType[];
+}
+
 export type DJAction = 
     | ISetIsMobile
     | ISetServices
     | ISetCurrentSection
     | ISetAbout
-    | ISetCounters;
+    | ISetCounters
+    | ISetEventTypes;
 
 export const djReducer = (state: DJState, action: DJAction): DJState => {
     switch (action.type) {
@@ -77,6 +86,11 @@ export const djReducer = (state: DJState, action: DJAction): DJState => {
             return {
                 ...state,
                 counters: action.counters
+            };
+        case 'SET_EVENT_TYPES':
+            return {
+                ...state,
+                eventTypes: action.eventTypes
             };
         default:
             return state;
