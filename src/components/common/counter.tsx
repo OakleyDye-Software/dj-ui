@@ -16,25 +16,17 @@ const Counter: React.FC<CounterProps> = ({ count, title, showPlusIcon }) => {
         triggerOnce: true,
         threshold: 0.75,
     });
-    const totalDuration = 2000;
-    const intervalDuration = totalDuration / count;
 
     React.useEffect(() => {
         if (inView) {
             setIsVisible(true);
-            let interval: NodeJS.Timeout | number = 0; // Explicitly type interval as NodeJS.Timeout | number
+            let interval: NodeJS.Timeout | number = 0;
             if (currentCount < count) {
                 interval = setInterval(() => {
-                    setCurrentCount((prevCount) => {
-                        if (prevCount < count) {
-                            return prevCount + 1;
-                        } else {
-                            clearInterval(interval as NodeJS.Timeout);
-                            return count;
-                        }
-                    });
-                }, intervalDuration);
+                    setCurrentCount(currentCount + 1);
+                }, 50);
             }
+            return () => clearInterval(interval as NodeJS.Timeout);
         }
     }, [inView, count, currentCount]);
 
@@ -53,7 +45,7 @@ const Counter: React.FC<CounterProps> = ({ count, title, showPlusIcon }) => {
                         {isVisible ? currentCount : 0}
                         {showPlusIcon ? '+' : ''}
                     </Typography>
-                    <Typography variant="body2" component="p">
+                    <Typography variant="h6" component="p">
                         {title}
                     </Typography>
                 </Box>

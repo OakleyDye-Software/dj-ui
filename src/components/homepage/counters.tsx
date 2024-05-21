@@ -3,6 +3,7 @@ import * as React from 'react';
 import { useDJContext } from '../../logic/state/GlobalContext';
 import counterService from '../../services/counterService';
 import Counter from '../common/counter';
+import { ICounter } from '../../interfaces/ICounter';
 
 const Counters: React.FC = () => {
     const { counters, dispatch } = useDJContext();
@@ -10,7 +11,7 @@ const Counters: React.FC = () => {
     React.useEffect(() => {
         const getCounters = async () => {
             await counterService.getCounters().then((data) => {
-                dispatch!({ type: 'SET_COUNTERS', counters: data });
+                dispatch!({ type: 'SET_COUNTERS', counters: (data as ICounter[]).sort((a, b) => a.id - b.id)});
             });
         };
 
