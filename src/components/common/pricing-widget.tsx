@@ -15,7 +15,7 @@ const PricingWidget: React.FC<PricingWidgetProps> = ({ pricePackage }) => {
                     <Typography variant='h6' component='h6'>${pricePackage.price}</Typography>
                     <List>
                         {pricePackage.features.map((feature, index) => (
-                            <Typography key={index} variant='body1' component='li'>{feature}</Typography>
+                            <Typography key={index} variant='body1' component='li'>{feature.name}</Typography>
                         ))}
                     </List>
                 </CardContent> 
