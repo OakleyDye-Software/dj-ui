@@ -41,7 +41,7 @@ const Homepage: React.FC = () => {
 
         const heroSectionThreshold = heroSectionHeight * 0.95;
         const aboutSectionThreshold = heroSectionHeight + (aboutSectionHeight * 0.95);
-        const serviceSectionThreshold = heroSectionHeight + aboutSectionHeight + (serviceSectionHeight * 0.95);
+        const serviceSectionThreshold = heroSectionHeight + aboutSectionHeight + (serviceSectionHeight * 0.98);
         const counterSectionThreshold = heroSectionHeight + aboutSectionHeight + serviceSectionHeight + (counterSectionHeight * 0.95);
         const contactSectionThreshold = heroSectionHeight + aboutSectionHeight + serviceSectionHeight + counterSectionHeight + (contactSectionHeight * 0.95);
 
