@@ -82,14 +82,14 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                             sx={{ 
                                 fontSize: isMobile ? 30 : 45, 
                                 opacity: isMenuHovered ? 0 : 1,
-                                transform: isMenuHovered ? 'rotate(45deg)' : 'rotate(0deg)',
+                                transform: isMenuHovered ? 'rotate(315deg)' : 'rotate(0deg)',
                             }}
                         />
                         <AddIcon 
                             sx={{ 
                                 fontSize: isMobile ? 30 : 45, 
                                 opacity: isMenuHovered ? 1 : 0,
-                                transform: isMenuHovered ? 'rotate(0deg)' : 'rotate(-45deg)', 
+                                transform: isMenuHovered ? 'rotate(0deg)' : 'rotate(-315deg)', 
                             }} 
                         /> 
                     </Box>
