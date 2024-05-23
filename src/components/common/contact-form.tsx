@@ -56,7 +56,7 @@ const ContactForm: React.FC = () => {
                 </div>
                 <TextField label="Tell me about your event" variant="outlined" fullWidth multiline rows={4} sx={{ mb: '1rem' }} />
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Button type="submit" variant="contained" color="primary" style={{ width: isMobile ? '100%' : undefined }}>Submit</Button>
+                    <Button type="submit" variant="contained" color="primary" sx={{ width: isMobile ? '100%' : undefined, borderRadius: 0 }}>Submit</Button>
                 </div>
             </form>
         </React.Fragment>
