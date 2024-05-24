@@ -9,6 +9,7 @@ import About from './about';
 import Counters from './counters';
 import ContactSection from './contact-section';
 import Pricing from './pricing';
+import FAQ from './faq';
 
 const Homepage: React.FC = () => {
     const { scrollY } = useScroll();
@@ -72,6 +73,7 @@ const Homepage: React.FC = () => {
             <div id="service" className='section'><ServicesSection /></div>
             <div id="pricing" className='section'><Pricing /></div>
             <div id="counter" className='section'><Counters /></div>
+            <div id="faq" className='section'><FAQ /></div>
             <div id="contact" className='section'><ContactSection /></div>
         </React.Fragment>
     );

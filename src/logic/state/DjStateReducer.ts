@@ -1,6 +1,7 @@
 import { IAbout } from "../../interfaces/IAbout";
 import { ICounter } from "../../interfaces/ICounter";
 import { IEventType } from "../../interfaces/IEventType";
+import { IFAQ } from "../../interfaces/IFAQ";
 import { IPackage } from "../../interfaces/IPackage";
 import { IServiceSummary } from "../../interfaces/IServiceSummary";
 
@@ -12,6 +13,7 @@ export interface DJState {
     counters: ICounter[];
     eventTypes: IEventType[];
     pricePackages: IPackage[];
+    faqs: IFAQ[];
     dispatch?: React.Dispatch<DJAction>;
 }
 
@@ -22,7 +24,8 @@ export const initialState: DJState = {
     services: [],
     counters: [],
     eventTypes: [],
-    pricePackages: []
+    pricePackages: [],
+    faqs: []
 };
 
 interface ISetIsMobile {
@@ -60,6 +63,11 @@ interface ISetPricePackages {
     pricePackages: IPackage[];
 }
 
+interface ISetFAQs {
+    type: 'SET_FAQS';
+    faqs: IFAQ[];
+}
+
 export type DJAction = 
     | ISetIsMobile
     | ISetServices
@@ -67,7 +75,8 @@ export type DJAction =
     | ISetAbout
     | ISetCounters
     | ISetEventTypes
-    | ISetPricePackages;
+    | ISetPricePackages
+    | ISetFAQs;
 
 export const djReducer = (state: DJState, action: DJAction): DJState => {
     switch (action.type) {
@@ -105,6 +114,11 @@ export const djReducer = (state: DJState, action: DJAction): DJState => {
             return {
                 ...state,
                 pricePackages: action.pricePackages
+            };
+        case 'SET_FAQS':
+            return {
+                ...state,
+                faqs: action.faqs
             };
         default:
             return state;

@@ -1,6 +1,15 @@
 import { ThemeOptions } from '@mui/material/styles';
 
 export const themeOptions: ThemeOptions = {
+  components: {
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: 'black',
+        },
+      },
+    },
+  },
   palette: {
     mode: 'dark',
     primary: {
