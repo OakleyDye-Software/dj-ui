@@ -18,8 +18,26 @@ export const themeOptions: ThemeOptions = {
     body1: {
       fontFamily: 'Roboto',
     },
-    // body2: {
-    //   fontFamily: 'Roboto',
-    // },
+  },
+};
+
+export const lightThemeOptions: ThemeOptions = {
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#95150c',
+    },
+    secondary: {
+      main: '#95150c',
+    },
+    background: {
+      default: 'black'
+    }
+  },
+  typography: {
+    fontFamily: 'Bungee',
+    body1: {
+      fontFamily: 'Roboto',
+    },
   },
 };

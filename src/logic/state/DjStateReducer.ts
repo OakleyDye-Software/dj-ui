@@ -1,6 +1,7 @@
 import { IAbout } from "../../interfaces/IAbout";
 import { ICounter } from "../../interfaces/ICounter";
 import { IEventType } from "../../interfaces/IEventType";
+import { IPackage } from "../../interfaces/IPackage";
 import { IServiceSummary } from "../../interfaces/IServiceSummary";
 
 export interface DJState {
@@ -10,6 +11,7 @@ export interface DJState {
     services: IServiceSummary[];
     counters: ICounter[];
     eventTypes: IEventType[];
+    pricePackages: IPackage[];
     dispatch?: React.Dispatch<DJAction>;
 }
 
@@ -19,7 +21,8 @@ export const initialState: DJState = {
     about: null,
     services: [],
     counters: [],
-    eventTypes: []
+    eventTypes: [],
+    pricePackages: []
 };
 
 interface ISetIsMobile {
@@ -52,13 +55,19 @@ interface ISetEventTypes {
     eventTypes: IEventType[];
 }
 
+interface ISetPricePackages {
+    type: 'SET_PRICE_PACKAGES';
+    pricePackages: IPackage[];
+}
+
 export type DJAction = 
     | ISetIsMobile
     | ISetServices
     | ISetCurrentSection
     | ISetAbout
     | ISetCounters
-    | ISetEventTypes;
+    | ISetEventTypes
+    | ISetPricePackages;
 
 export const djReducer = (state: DJState, action: DJAction): DJState => {
     switch (action.type) {
@@ -91,6 +100,11 @@ export const djReducer = (state: DJState, action: DJAction): DJState => {
             return {
                 ...state,
                 eventTypes: action.eventTypes
+            };
+        case 'SET_PRICE_PACKAGES':
+            return {
+                ...state,
+                pricePackages: action.pricePackages
             };
         default:
             return state;

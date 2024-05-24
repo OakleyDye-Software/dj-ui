@@ -19,6 +19,9 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
         case 'service':
             color = 'black';
             break;
+        case 'pricing':
+            color = 'black';
+            break;
         default:
             color = 'white';
             break;
