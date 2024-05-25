@@ -65,8 +65,8 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                             transform: 'translate(-50%, -50%) scale(3)',
                         }}
                     >
-                        {/* <img src={'test'} alt="DJ OXLEY" width={100} height={100} /> */}
-                        <Typography variant={isMobile ? 'h6' : 'h4'} component="h4" sx={{ ml: 1 }}>CD ENTERTAINMENT</Typography>
+                        <img src={color === 'black' ? '/logo_black.png' : '/logo_white.png'} alt="CD ENTERTAINMENT" width={150}  />
+                        {/* <Typography variant={isMobile ? 'h6' : 'h4'} component="h4" sx={{ ml: 1 }}>CD ENTERTAINMENT</Typography> */}
                     </Box>
                 </div>
                 <Box 
