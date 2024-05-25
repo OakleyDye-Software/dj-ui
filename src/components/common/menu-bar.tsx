@@ -1,9 +1,6 @@
-import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { Box, Drawer, List, ListItemButton, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import AddIcon from '@mui/icons-material/Add';
-import HomeIcon from '@mui/icons-material/Home';
-import InfoIcon from '@mui/icons-material/Info';
-import ContactMailIcon from '@mui/icons-material/ContactMail';
 import CloseIcon from '@mui/icons-material/Close';
 import * as React from 'react';
 import { useDJContext } from '../../logic/state/GlobalContext';
@@ -124,7 +121,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                     <Box sx={{ display: 'flex', justifyContent: 'flex-end', pt: 5, pr: 5 }}>
                         <CloseIcon onClick={handleDrawerClose} sx={{ fontSize: 45 }}/>
                     </Box>
-                    <List sx={{ width: '30vw' }}>
+                    <List sx={{ minWidth: '30vw' }}>
                         <ListItemButton sx={{ justifyContent: 'center' }}>
                             <Typography variant='h4' component='h4'>Home</Typography>
                         </ListItemButton>
