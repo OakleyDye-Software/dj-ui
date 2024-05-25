@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
                 <div className='footer-content'>
                     <Box sx={{ display: 'flex', mb: '1rem', justifyContent: 'space-between', gap: 5, mx: 5 }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} className='footer-section'>
-                            <img src="/logo_white.png" alt="CD ENTERTAINMENT" width={150} />
+                            <img src="/disk_logo.png" alt="CD ENTERTAINMENT" width={150} />
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'column' }} className='footer-section'>
                             <Typography variant='h6'>Company</Typography>
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                             <ul>
                                 <li>435-557-1427</li>
                                 <li>info@cdentertainment.events</li>
-                                <li>572 S 690 E Hyrum, UT 84319</li>
+                                <li>Hyrum, UT</li>
                             </ul>
                         </Box>
                     </Box>

@@ -58,6 +58,10 @@ const HeroSection: React.FC = () => {
                             fontSize: '1.5rem', 
                             borderRadius: 0 
                         }}
+                        onClick={() => {
+                            const contactSection = document.getElementById('contact') as HTMLElement;
+                            window.scrollTo({ top: contactSection.offsetTop, behavior: 'smooth' });
+                        }}
                     >
                         Book Now
                     </Button>
@@ -76,7 +80,10 @@ const HeroSection: React.FC = () => {
                         Scroll down
                     </Typography>
                     <ButtonGroup variant="text" color="primary" aria-label="scroll down">
-                        <Button>
+                        <Button onClick={() => {
+                            const aboutSection = document.getElementById('about') as HTMLElement;
+                            window.scrollTo({ top: aboutSection.offsetTop, behavior: 'smooth' });
+                        }}>
                             <BouncingIcon />
                         </Button>
                     </ButtonGroup>

@@ -30,7 +30,7 @@ const PricingWidget: React.FC<PricingWidgetProps> = ({ pricePackage }) => {
                             ))}
                         </List>
                     </Box>
-                    <Button variant='contained' color='primary' sx={{ mt: 'auto' }}>Book Now</Button>
+                    <Button variant='contained' color='primary' sx={{ mt: 'auto' }} onClick={() => window.scrollTo({ top: document.getElementById('contact')?.offsetTop, behavior: 'smooth'})}>Book Now</Button>
                 </CardContent> 
             </Card>
         </React.Fragment>
