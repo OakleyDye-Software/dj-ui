@@ -28,7 +28,7 @@ const FAQ: React.FC = () => {
 
     return (  
         <React.Fragment>
-            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', mt: 5, mx: isMobile ? '2vw' : '20vw' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', mx: isMobile ? '2vw' : '20vw', mt: 5 }}>
                 <Typography variant={isMobile ? 'h4' : 'h2'} align="center" gutterBottom>FAQs</Typography>
                 {faqs.map((faq) => (
                     <Accordion key={faq.id} expanded={expanded === faq.id} onChange={handleChange(faq.id)}>
