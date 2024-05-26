@@ -128,7 +128,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                         <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('about')?.offsetTop, behavior: 'smooth' })}>
                             <Typography variant='h4' component='h4'>About</Typography>
                         </ListItemButton>
-                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('services')?.offsetTop, behavior: 'smooth'})}>
+                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('service')?.offsetTop, behavior: 'smooth'})}>
                             <Typography variant='h4' component='h4'>Services</Typography>
                         </ListItemButton>
                         <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('contact')?.offsetTop, behavior: 'smooth'})}>
