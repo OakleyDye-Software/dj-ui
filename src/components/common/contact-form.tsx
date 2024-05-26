@@ -1,13 +1,24 @@
 
 import * as React from 'react';
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, MenuItem } from '@mui/material';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useDJContext } from '../../logic/state/GlobalContext';
 import eventService from '../../services/eventService';
+import { IContactFormSubmission } from '../../interfaces/IContactFormSubmission';
+import dayjs from 'dayjs';
+import { useState } from 'react';
 
 const ContactForm: React.FC = () => {
     const { isMobile, eventTypes, dispatch } = useDJContext();
+    const [eventDate, setEventDate] = React.useState<Date | null>(null);
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [eventType, setEventType] = useState<number | null>(null);
+    const [location, setLocation] = useState("");
+    const [message, setMessage] = useState("");
 
     React.useEffect(() => {
         const getEventTypes = async () => {
@@ -23,38 +34,118 @@ const ContactForm: React.FC = () => {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        // Handle form submission logic here
+
+        const submission: IContactFormSubmission = {
+            firstName,
+            lastName,
+            email,
+            phoneNumber: phone,
+            eventTypeId: eventType ? eventType : 0,
+            venueLocation: location,
+            dateOfEvent: eventDate ? dayjs(eventDate).format('YYYY-MM-DD') : '',
+            eventDescription: message
+        };
+
+        console.log(submission);
     };
 
     return (
         <React.Fragment>
             <form onSubmit={handleSubmit} style={{ margin: '1rem', padding: '1rem', width: '75%' }}>
                 <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row' }}>
-                    <TextField label="First Name" variant="outlined" fullWidth sx={{ mr: '1rem', mb: '1rem' }} />
-                    <TextField label="Last Name" variant="outlined" fullWidth sx={{ mb: '1rem' }} />
+                    <TextField 
+                        label="First Name" 
+                        id='firstName' 
+                        variant="outlined" 
+                        fullWidth 
+                        required
+                        sx={{ mr: '1rem', mb: '1rem' }} 
+                        value={firstName} 
+                        onChange={(e) => setFirstName(e.target.value)}
+                    />
+                    <TextField 
+                        label="Last Name" 
+                        id='lastName' 
+                        variant="outlined" 
+                        fullWidth 
+                        required
+                        sx={{ mb: '1rem' }} 
+                        value={lastName} 
+                        onChange={(e) => setLastName(e.target.value)}
+                    />
                 </div>
                 <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row' }}>
-                    <TextField label="Email" variant="outlined" fullWidth sx={{ mr: '1rem', mb: '1rem' }} />
-                    <TextField label="Phone Number" variant="outlined" fullWidth sx={{ mb: '1rem' }} />
+                    <TextField 
+                        label="Email" 
+                        id='email' 
+                        variant="outlined" 
+                        fullWidth 
+                        required
+                        sx={{ mr: '1rem', mb: '1rem' }} 
+                        value={email} 
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <TextField 
+                        label="Phone Number" 
+                        id='phone' 
+                        variant="outlined" 
+                        fullWidth 
+                        sx={{ mb: '1rem' }} 
+                        value={phone} 
+                        onChange={(e) => setPhone(e.target.value)}
+                    />
                 </div>
-                <TextField select label="Event Type" variant="outlined" fullWidth sx={{ mb: '1rem' }}>
+                <TextField 
+                    select 
+                    label="Event Type" 
+                    id='eventType' 
+                    variant="outlined" 
+                    fullWidth 
+                    required
+                    sx={{ mb: '1rem' }}
+                    value={eventType}
+                    onChange={(e) => setEventType(Number(e.target.value))}
+                >
                     {eventTypes.map((type) => (
-                        <option key={type.id} value={type.id}>
+                        <MenuItem key={type.id} value={type.id}>
                             {type.name}
-                        </option>
+                        </MenuItem>
                     ))}
                 </TextField>
                 <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row' }}>
                     <div style={{ flex: 1, marginRight: isMobile ? undefined : '0.5rem', marginBottom: '1rem' }}>
-                        <TextField label="Venue Location" variant="outlined" fullWidth />
+                        <TextField 
+                            label="Venue Location" 
+                            id='location' 
+                            variant="outlined" 
+                            fullWidth 
+                            value={location}
+                            onChange={(e) => setLocation(e.target.value)}
+                        />
                     </div>
                     <div style={{ flex: 1, marginLeft: isMobile ? undefined : '0.5rem', marginBottom: '1rem' }}>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DatePicker label="Date of Event" sx={{ width: '100%' }} />
+                            <DatePicker 
+                                label="Date of Event" 
+                                value={eventDate ? dayjs(eventDate) : undefined} 
+                                onChange={(date) => setEventDate(date ? date?.toDate() : null)} 
+                                sx={{ width: '100%' }} 
+                            />
                         </LocalizationProvider>
                     </div>
                 </div>
-                <TextField label="Tell me about your event" variant="outlined" fullWidth multiline rows={4} sx={{ mb: '1rem' }} />
+                <TextField 
+                    label="Tell me about your event" 
+                    id='message' 
+                    variant="outlined" 
+                    fullWidth 
+                    required
+                    multiline 
+                    rows={4} 
+                    sx={{ mb: '1rem' }} 
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                />
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                     <Button type="submit" variant="contained" color="primary" sx={{ width: isMobile ? '100%' : undefined, borderRadius: 0 }}>Submit</Button>
                 </div>
