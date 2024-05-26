@@ -8,6 +8,8 @@ import eventService from '../../services/eventService';
 import { IContactFormSubmission } from '../../interfaces/IContactFormSubmission';
 import dayjs from 'dayjs';
 import { useState } from 'react';
+import contactService from '../../services/contactService';
+import notify from '../common/snackbarConfig';
 
 const ContactForm: React.FC = () => {
     const { isMobile, eventTypes, dispatch } = useDJContext();
@@ -46,7 +48,21 @@ const ContactForm: React.FC = () => {
             eventDescription: message
         };
 
-        console.log(submission);
+        contactService.sendContactFormSubmissionAsync(submission).then((response) => {
+            if (response) {
+                notify.success('Your message has been sent successfully!');
+                setFirstName("");
+                setLastName("");
+                setEmail("");
+                setPhone("");
+                setEventType(null);
+                setLocation("");
+                setEventDate(null);
+                setMessage("");
+            } else {
+                notify.error('There was an error sending your message. Please try again later.');
+            }
+        });
     };
 
     return (
