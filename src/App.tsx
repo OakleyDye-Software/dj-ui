@@ -21,7 +21,7 @@ function App() {
             <SnackbarConfigurator />
             <BrowserRouter>
               <DJProvider>
-                <div style={{ maxWidth: '100vw' }}>
+                <div style={{ width: '100%' }}>
                   <Router />
                 </div>
               </DJProvider>
