@@ -1,13 +1,16 @@
 import { Box, Divider, Link, Typography } from '@mui/material';
 import * as React from 'react';
+import { useDJContext } from '../../logic/state/GlobalContext';
 
 const Footer: React.FC = () => {
+    const { isMobile } = useDJContext();
+
     return (  
         <React.Fragment>
             <Divider sx={{ my: 5 }} />
             <footer className='footer'>
                 <div className='footer-content'>
-                    <Box sx={{ display: 'flex', mb: '1rem', justifyContent: 'space-between', gap: 5, mx: 5 }}>
+                    <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row',  mb: '1rem', justifyContent: 'space-between', gap: 5, mx: 5 }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} className='footer-section'>
                             <img src="/disk_logo.png" alt="CD ENTERTAINMENT" width={150} />
                         </Box>
