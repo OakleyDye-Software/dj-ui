@@ -23,6 +23,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "framer-motion": "^11.1.9",
+    "heroku-ssl-redirect": "^0.1.1",
     "notistack": "^2.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

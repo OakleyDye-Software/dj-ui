@@ -1,1 +1,1 @@
-web: ./startup.sh
+web: npm run heroku-start
