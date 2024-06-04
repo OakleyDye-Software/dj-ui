@@ -14,7 +14,8 @@ interface MenuBarProps {
 const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
     const { isMobile } = useDJContext();
     const navigate = useNavigate();
-    const [isMenuVisible, setIsMenuVisible] = React.useState<boolean>(false);
+    const isHomePage = window.location.pathname === '/';
+    const [isMenuVisible, setIsMenuVisible] = React.useState<boolean>(!isHomePage);
     const [isMenuHovered, setIsMenuHovered] = React.useState<boolean>(false);
     const [isDrawerOpen, setIsDrawerOpen] = React.useState<boolean>(false);
 
@@ -55,13 +56,13 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
             >
                 <div style={{ height: '100%' }}>
                     <Box 
-                        className='logo'
+                        className={isHomePage ? 'logo': ''}
                         sx={{ 
                             zIndex: 1, 
                             position: 'absolute', 
-                            top: '50%', 
-                            left: '50%',
-                            transform: 'translate(-50%, -50%) scale(3)',
+                            top: isHomePage ? '50%' : '1rem', 
+                            left: isHomePage ? '50%' : '1rem',
+                            transform: isHomePage ? 'translate(-50%, -50%) scale(3)' : undefined,
                         }}
                     >
                         <img src={color === 'black' ? '/logo_black.png' : '/logo_white.png'} alt="CD ENTERTAINMENT" width={150}  />
