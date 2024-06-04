@@ -124,7 +124,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                         <CloseIcon onClick={handleDrawerClose} sx={{ fontSize: 45 }}/>
                     </Box>
                     <List sx={{ minWidth: '30vw' }}>
-                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('hero')?.offsetTop, behavior: 'smooth'})}>
+                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/')}>
                             <Typography variant='h4' component='h4'>Home</Typography>
                         </ListItemButton>
                         <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/about')}>

@@ -1,4 +1,4 @@
-import { Box, Divider, Link, Typography } from '@mui/material';
+import { Box, Divider, Link, List, ListItem, Typography } from '@mui/material';
 import * as React from 'react';
 import { useDJContext } from '../../logic/state/GlobalContext';
 
@@ -12,12 +12,12 @@ const Footer: React.FC = () => {
                 <div className='footer-content'>
                     <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row',  mb: '1rem', justifyContent: 'space-between', gap: 5, mx: 5 }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} className='footer-section'>
-                            <img src="/disk_logo.png" alt="CD ENTERTAINMENT" width={150} />
+                            <Link href={`/`}><img src="/disk_logo.png" alt="CD ENTERTAINMENT" width={150} /></Link>
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'column' }} className='footer-section'>
                             <Typography variant='h6'>Company</Typography>
                             <ul>
-                                <li>About Us</li>
+                                <Link href={`/about`}><li>About Us</li></Link>
                                 <li>Services</li>
                                 <li>Portfolio</li>
                                 <li>Testimonials</li>
@@ -46,8 +46,8 @@ const Footer: React.FC = () => {
                         <Box sx={{ display: 'flex', flexDirection: 'column' }} className='footer-section'>
                             <Typography variant='h6'>Contact Us</Typography>
                             <ul>
-                                <li>435-557-1427</li>
-                                <li>info@cdentertainment.events</li>
+                                <Link href={'tel:+14355571427'}><li>435-557-1427</li></Link>
+                                <Link href={'mailto:dj@oakleydye.com'}><li>dj@oakleydye.com</li></Link>
                                 <li>Hyrum, UT</li>
                             </ul>
                         </Box>
