@@ -4,6 +4,7 @@ import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import * as React from 'react';
 import { useDJContext } from '../../logic/state/GlobalContext';
+import { useNavigate } from 'react-router-dom';
 
 interface MenuBarProps {
     className: string;
@@ -12,6 +13,7 @@ interface MenuBarProps {
 
 const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
     const { isMobile } = useDJContext();
+    const navigate = useNavigate();
     const [isMenuVisible, setIsMenuVisible] = React.useState<boolean>(false);
     const [isMenuHovered, setIsMenuHovered] = React.useState<boolean>(false);
     const [isDrawerOpen, setIsDrawerOpen] = React.useState<boolean>(false);
@@ -125,7 +127,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                         <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('hero')?.offsetTop, behavior: 'smooth'})}>
                             <Typography variant='h4' component='h4'>Home</Typography>
                         </ListItemButton>
-                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('about')?.offsetTop, behavior: 'smooth' })}>
+                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/about')}>
                             <Typography variant='h4' component='h4'>About</Typography>
                         </ListItemButton>
                         <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('service')?.offsetTop, behavior: 'smooth'})}>
