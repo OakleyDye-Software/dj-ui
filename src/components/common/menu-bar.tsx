@@ -22,6 +22,9 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
     const [openSubMenu, setOpenSubMenu] = React.useState<{ [key: string]: boolean }>({services: false});
 
     const handleClickSubmenu = (menu: string) => {
+        if (openSubMenu[menu]) {
+            navigate('/' + menu);
+        }
         setOpenSubMenu({...openSubMenu, [menu]: !openSubMenu[menu]});
     };
 
@@ -162,7 +165,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                                 </ListItemButton>
                             </List>
                         </Collapse>
-                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('contact')?.offsetTop, behavior: 'smooth'})}>
+                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/contact')}>
                             <Typography variant='h4' component='h4'>Contact</Typography>
                         </ListItemButton>
                     </List>
