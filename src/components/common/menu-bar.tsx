@@ -145,6 +145,21 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                                 <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/services/weddings')}>
                                     <Typography variant='h6' component='h6'>Weddings</Typography>
                                 </ListItemButton>
+                                <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/services/dances')}>
+                                    <Typography variant='h6' component='h6'>Dances</Typography>
+                                </ListItemButton>
+                                <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/services/parties')}>
+                                    <Typography variant='h6' component='h6'>Parties</Typography>
+                                </ListItemButton>
+                                <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/services/corporate-events')}>
+                                    <Typography variant='h6' component='h6'>Corporate Events</Typography>
+                                </ListItemButton>
+                                <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/services/live-sound')}>
+                                    <Typography variant='h6' component='h6'>Live Sound</Typography>
+                                </ListItemButton>
+                                <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/services/gear-rental')}>
+                                    <Typography variant='h6' component='h6'>Gear Rental</Typography>
+                                </ListItemButton>
                             </List>
                         </Collapse>
                         <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('contact')?.offsetTop, behavior: 'smooth'})}>
