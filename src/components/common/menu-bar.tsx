@@ -1,10 +1,11 @@
-import { Box, Drawer, Link, List, ListItemButton, Typography } from '@mui/material';
+import { Box, Collapse, Drawer, Link, List, ListItemButton, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import * as React from 'react';
 import { useDJContext } from '../../logic/state/GlobalContext';
 import { useNavigate } from 'react-router-dom';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 interface MenuBarProps {
     className: string;
@@ -18,6 +19,11 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
     const [isMenuVisible, setIsMenuVisible] = React.useState<boolean>(!isHomePage);
     const [isMenuHovered, setIsMenuHovered] = React.useState<boolean>(false);
     const [isDrawerOpen, setIsDrawerOpen] = React.useState<boolean>(false);
+    const [openSubMenu, setOpenSubMenu] = React.useState<{ [key: string]: boolean }>({services: false});
+
+    const handleClickSubmenu = (menu: string) => {
+        setOpenSubMenu({...openSubMenu, [menu]: !openSubMenu[menu]});
+    };
 
     const handleDrawerClose = () => {
         setIsDrawerOpen(false);
@@ -130,9 +136,17 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                         <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/about')}>
                             <Typography variant='h4' component='h4'>About</Typography>
                         </ListItemButton>
-                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/services')}>
+                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => handleClickSubmenu('services')}>
                             <Typography variant='h4' component='h4'>Services</Typography>
+                            {openSubMenu.services ? <ExpandLess /> : <ExpandMore />}
                         </ListItemButton>
+                        <Collapse in={openSubMenu.services} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                                <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/services/weddings')}>
+                                    <Typography variant='h6' component='h6'>Weddings</Typography>
+                                </ListItemButton>
+                            </List>
+                        </Collapse>
                         <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('contact')?.offsetTop, behavior: 'smooth'})}>
                             <Typography variant='h4' component='h4'>Contact</Typography>
                         </ListItemButton>
