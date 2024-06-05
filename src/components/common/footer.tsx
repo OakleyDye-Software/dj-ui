@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
                             <Typography variant='h6'>Company</Typography>
                             <ul>
                                 <Link href={`/about`}><li>About Us</li></Link>
-                                <li>Services</li>
+                                <Link href={`/services`}><li>Services</li></Link>
                                 <li>Portfolio</li>
                                 <li>Testimonials</li>
                                 <li>Contact Us</li>
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
                         <Box sx={{ display: 'flex', flexDirection: 'column' }} className='footer-section'>
                             <Typography variant='h6'>Services</Typography>
                             <ul>
-                                <li>Weddings</li>
+                                <Link href={`/services/weddings`}><li>Weddings</li></Link>
                                 <li>Corporate Events</li>
                                 <li>Private Parties</li>
                                 <li>Concerts</li>

@@ -1,4 +1,4 @@
-import { Box, Drawer, List, ListItemButton, Typography } from '@mui/material';
+import { Box, Drawer, Link, List, ListItemButton, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
@@ -65,8 +65,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                             transform: isHomePage ? 'translate(-50%, -50%) scale(3)' : undefined,
                         }}
                     >
-                        <img src={color === 'black' ? '/logo_black.png' : '/logo_white.png'} alt="CD ENTERTAINMENT" width={150}  />
-                        {/* <Typography variant={isMobile ? 'h6' : 'h4'} component="h4" sx={{ ml: 1 }}>CD ENTERTAINMENT</Typography> */}
+                        <Link href={`/`}><img src={color === 'black' ? '/logo_black.png' : '/logo_white.png'} alt="CD ENTERTAINMENT" width={150}  /></Link>
                     </Box>
                 </div>
                 <Box 
@@ -131,7 +130,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                         <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/about')}>
                             <Typography variant='h4' component='h4'>About</Typography>
                         </ListItemButton>
-                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('service')?.offsetTop, behavior: 'smooth'})}>
+                        <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => navigate('/services')}>
                             <Typography variant='h4' component='h4'>Services</Typography>
                         </ListItemButton>
                         <ListItemButton sx={{ justifyContent: 'center' }} onClick={() => window.scrollTo({ top: document.getElementById('contact')?.offsetTop, behavior: 'smooth'})}>
