@@ -13,7 +13,7 @@ const PricingWidget: React.FC<PricingWidgetProps> = ({ pricePackage }) => {
 
     return (  
         <React.Fragment>
-            <Card sx={{ width: isMobile ? '80vw' : '25vw', minHeight: '70vh', backgroundColor: '#f8f8f8', boxShadow: 5 }}>
+            <Card sx={{ width: isMobile ? '80vw' : '25vw', backgroundColor: '#f8f8f8', boxShadow: 5 }}>
                <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
                     <Box>
                         <Typography variant='h4' component='h4'>{pricePackage.name}</Typography>
