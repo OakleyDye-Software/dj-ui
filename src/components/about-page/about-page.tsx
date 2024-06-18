@@ -146,7 +146,7 @@ const AboutPage: React.FC = () => {
                     </Typography>
 
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-                        <ContactForm />
+                        <ContactForm setWidth={true}/>
                     </Box>
 
                     <Typography variant="body1" paragraph>
