@@ -11,7 +11,11 @@ import { useState } from 'react';
 import contactService from '../../services/contactService';
 import notify from '../common/snackbarConfig';
 
-const ContactForm: React.FC = () => {
+interface ContactFormProps {
+    setWidth: boolean
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({ setWidth }) => {
     const { isMobile, eventTypes, dispatch } = useDJContext();
     const [eventDate, setEventDate] = React.useState<Date | null>(null);
     const [firstName, setFirstName] = useState("");
@@ -67,7 +71,7 @@ const ContactForm: React.FC = () => {
 
     return (
         <React.Fragment>
-            <form onSubmit={handleSubmit} style={{ margin: '1rem', padding: '1rem', width: '75%' }}>
+            <form onSubmit={handleSubmit} style={{ margin: '1rem', padding: '1rem', width: setWidth ? '75%' : undefined }}>
                 <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row' }}>
                     <TextField 
                         label="First Name" 

@@ -10,7 +10,7 @@ const ContactSection: React.FC = () => {
         <React.Fragment>
             <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} >
                 <Typography variant={isMobile ? 'h4' : 'h2'} component="h2" sx={{ textAlign: 'center', pt: 10, pb: 5 }}>Contact Us</Typography>
-                <ContactForm />
+                <ContactForm setWidth={true} />
             </Box>
         </React.Fragment>
     );

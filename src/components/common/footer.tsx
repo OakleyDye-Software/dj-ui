@@ -1,4 +1,4 @@
-import { Box, Divider, Link, Typography } from '@mui/material';
+import { Box, Divider, Link, List, ListItem, Typography } from '@mui/material';
 import * as React from 'react';
 import { useDJContext } from '../../logic/state/GlobalContext';
 
@@ -12,42 +12,43 @@ const Footer: React.FC = () => {
                 <div className='footer-content'>
                     <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row',  mb: '1rem', justifyContent: 'space-between', gap: 5, mx: 5 }}>
                         <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} className='footer-section'>
-                            <img src="/disk_logo.png" alt="CD ENTERTAINMENT" width={150} />
+                            <Link href={`/`}><img src="/disk_logo.png" alt="CD ENTERTAINMENT" width={150} /></Link>
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'column' }} className='footer-section'>
                             <Typography variant='h6'>Company</Typography>
                             <ul>
-                                <li>About Us</li>
-                                <li>Services</li>
-                                <li>Portfolio</li>
-                                <li>Testimonials</li>
-                                <li>Contact Us</li>
+                                <Link sx={{ color: 'white' }} href={`/about`}><li>About Us</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/services`}><li>Services</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/portfolio`}><li>Portfolio</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/testimonials`}><li>Testimonials</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/contact`}><li>Contact Us</li></Link>
                             </ul>
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'column' }} className='footer-section'>
                             <Typography variant='h6'>Services</Typography>
                             <ul>
-                                <li>Weddings</li>
-                                <li>Corporate Events</li>
-                                <li>Private Parties</li>
-                                <li>Concerts</li>
-                                <li>Special Events</li>
+                                <Link sx={{ color: 'white' }} href={`/services/weddings`}><li>Weddings</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/services/dances`}><li>Dances</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/services/parties`}><li>Parties</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/services/corporate-events`}><li>Corporate Events</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/services/live-sound`}><li>Live Sound</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/services/gear-rental`}><li>Gear Rental</li></Link>
                             </ul>
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'column' }} className='footer-section'>
                             <Typography variant='h6'>Legal</Typography>
                             <ul>
-                                <li>Privacy Policy</li>
-                                <li>Terms & Conditions</li>
-                                <li>Cookie Policy</li>
-                                <li>Disclaimer</li>
+                                <Link sx={{ color: 'white' }} href={`/legal/privacy-policy`}><li>Privacy Policy</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/legal/terms-and-conditions`}><li>Terms & Conditions</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/legal/cookie-policy`}><li>Cookie Policy</li></Link>
+                                <Link sx={{ color: 'white' }} href={`/legal/disclaimer`}><li>Disclaimer</li></Link>
                             </ul>
                         </Box>
                         <Box sx={{ display: 'flex', flexDirection: 'column' }} className='footer-section'>
                             <Typography variant='h6'>Contact Us</Typography>
                             <ul>
-                                <li>435-557-1427</li>
-                                <li>info@cdentertainment.events</li>
+                                <Link sx={{ color: 'white' }} href={'tel:+14355571427'}><li>435-557-1427</li></Link>
+                                <Link sx={{ color: 'white' }} href={'mailto:dj@oakleydye.com'}><li>dj@oakleydye.com</li></Link>
                                 <li>Hyrum, UT</li>
                             </ul>
                         </Box>
