@@ -21,10 +21,10 @@ const ServicesSection: React.FC = () => {
     
     return (  
         <React.Fragment>
-            <Typography variant={isMobile ? 'h4' : 'h2'} component="h2" sx={{ textAlign: 'center', pt: 10, pb: 5, backgroundColor: 'white', color: 'black' }}>Our Services</Typography>
+            <Typography variant={isMobile ? 'h4' : 'h2'} component="h2" sx={{ textAlign: 'center', pt: 10, pb: 5, backgroundColor: '#FFFFFF', color: '#000000' }}>Our Services</Typography>
             <Box 
                 sx={{ 
-                    backgroundColor: 'white', 
+                    backgroundColor: '#FFFFFF', 
                     display: 'flex', 
                     justifyContent: 'center', 
                     alignItems: 'center', 
@@ -46,11 +46,11 @@ const ServicesSection: React.FC = () => {
                         <Box 
                             key={service.id} 
                             sx={{ 
-                                backgroundColor: 'black', 
+                                backgroundColor: '#000000', 
                                 backgroundImage: `url(/images/${service.imageUrl})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
-                                color: 'white', 
+                                color: '#FFFFFF', 
                                 px: 2, 
                                 py: 10, 
                                 width: ['90%', '45%'], 
@@ -70,7 +70,7 @@ const ServicesSection: React.FC = () => {
                                     right: 0, 
                                     height: '0', 
                                     backgroundColor: 'rgba(0,0,0,0.9)', 
-                                    color: 'white', 
+                                    color: '#FFFFFF', 
                                     transition: '0.3s', 
                                     overflow: 'hidden', 
                                     px: 2

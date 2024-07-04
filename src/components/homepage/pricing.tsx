@@ -25,7 +25,7 @@ const Pricing: React.FC = () => {
     return (  
         <React.Fragment>
             <ThemeProvider theme={lightTheme}>
-                <Typography variant={isMobile ? 'h4' : 'h2'} component='h2' sx={{ textAlign: 'center', pt: 10, color: 'black', backgroundColor: 'white' }}>Pricing</Typography>
+                <Typography variant={isMobile ? 'h4' : 'h2'} component='h2' sx={{ textAlign: 'center', pt: 10, color: '#000000', backgroundColor: '#FFFFFF' }}>Pricing</Typography>
                 <Box 
                     sx={{ 
                         display: 'flex', 
@@ -33,7 +33,7 @@ const Pricing: React.FC = () => {
                         justifyContent: 'center', 
                         alignItems: 'center', 
                         width: '100vw', 
-                        background: 'white', 
+                        background: '#FFFFFF', 
                         py: isMobile ? undefined : 10,
                         gap: 5
                     }}

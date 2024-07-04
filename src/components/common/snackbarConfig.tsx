@@ -19,7 +19,7 @@ const action = (snackbarId: SnackbarKey | undefined) => (
       ref.closeSnackbar(snackbarId);
     }}
   >
-    <CloseIcon style={{ color: "white" }} />
+    <CloseIcon style={{ color: "#FFFFFF" }} />
   </Button>
 );
 
