@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                             <Typography variant='h6'>Contact Us</Typography>
                             <ul>
                                 <Link sx={{ color: 'white' }} href={'tel:+14355571427'}><li>435-557-1427</li></Link>
-                                <Link sx={{ color: 'white' }} href={'mailto:dj@oakleydye.com'}><li>dj@oakleydye.com</li></Link>
+                                <Link sx={{ color: 'white' }} href={'mailto:oakley@cdentertainment.co'}><li>oakley@cdentertainment.co</li></Link>
                                 <li>Hyrum, UT</li>
                             </ul>
                         </Box>
