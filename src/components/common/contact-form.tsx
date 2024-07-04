@@ -52,7 +52,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ setWidth }) => {
             eventDescription: message
         };
 
-        contactService.sendContactFormSubmissionAsync(submission).then((response) => {
+        (async () => {
+            await contactService.sendContactFormSubmissionAsync(submission).then((response) => {
             if (response) {
                 notify.success('Your message has been sent successfully!');
                 setFirstName("");
@@ -67,6 +68,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ setWidth }) => {
                 notify.error('There was an error sending your message. Please try again later.');
             }
         });
+        })();
     };
 
     return (

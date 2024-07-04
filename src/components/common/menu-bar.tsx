@@ -126,7 +126,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                     open={isDrawerOpen}
                     onClose={handleDrawerClose}
                     sx={{
-                        color: 'black'
+                        color: '#000000'
                     }}
                 >
                     <Box sx={{ display: 'flex', justifyContent: 'flex-end', pt: 5, pr: 5 }}>

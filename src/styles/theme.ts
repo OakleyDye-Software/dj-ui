@@ -5,7 +5,7 @@ export const themeOptions: ThemeOptions = {
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: 'black',
+          backgroundColor: '#000000',
         },
       },
     },
@@ -19,7 +19,7 @@ export const themeOptions: ThemeOptions = {
       main: '#95150c',
     },
     background: {
-      default: 'black'
+      default: '#000000'
     }
   },
   typography: {
@@ -40,7 +40,7 @@ export const lightThemeOptions: ThemeOptions = {
       main: '#95150c',
     },
     background: {
-      default: 'black'
+      default: '#000000'
     }
   },
   typography: {
