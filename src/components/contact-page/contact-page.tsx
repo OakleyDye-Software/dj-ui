@@ -34,7 +34,7 @@ const ContactPage: React.FC = () => {
                                 Contact Information
                             </Typography>
                             <Typography variant="body1" paragraph>
-                                <strong>Email:</strong> dj@oakleydye.com
+                                <strong>Email:</strong>oakley@cdentertainment.co
                             </Typography>
                             <Typography variant="body1" paragraph>
                                 <strong>Phone:</strong> (435) 557-1427
