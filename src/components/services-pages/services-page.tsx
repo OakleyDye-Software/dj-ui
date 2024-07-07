@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MenuBar from '../common/menu-bar';
-import { Box, Container, Link, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Footer from '../common/footer';
 import { useDJContext } from '../../logic/state/GlobalContext';
 import serviceService from '../../services/serviceService';

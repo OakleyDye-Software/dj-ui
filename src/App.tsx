@@ -21,7 +21,7 @@ function App() {
             <SnackbarConfigurator />
             <BrowserRouter>
               <DJProvider>
-                <div style={{ width: '100%' }}>
+                <div style={{ width: '100%', overflowX: 'hidden' }}>
                   <Router />
                 </div>
               </DJProvider>

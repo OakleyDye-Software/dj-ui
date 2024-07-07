@@ -119,7 +119,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                             }} 
                         /> 
                     </Box>
-                    <Typography variant={isMobile ? 'h6' : 'h4'} component="h4" sx={{ ml: 1 }}>Menu</Typography>
+                    <Typography variant={isMobile ? 'h6' : 'h4'} component="h4" sx={{ ml: 1, cursor: 'pointer' }}>Menu</Typography>
                 </Box>
 
                 <Drawer
