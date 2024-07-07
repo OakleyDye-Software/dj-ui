@@ -1,13 +1,15 @@
 import * as React from 'react';
 import MenuBar from '../common/menu-bar';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Link, Typography } from '@mui/material';
 import Footer from '../common/footer';
 import { useDJContext } from '../../logic/state/GlobalContext';
 import serviceService from '../../services/serviceService';
 import { IServiceSummary } from '../../interfaces/IServiceSummary';
+import { useNavigate } from 'react-router-dom';
 
 const ServicesPage: React.FC = () => {
     const { isMobile, services, dispatch } = useDJContext();
+    const navigate = useNavigate();
 
     React.useEffect(() => {
         if (services.length === 0){
@@ -72,8 +74,10 @@ const ServicesPage: React.FC = () => {
                                         width: ['90%', '45%'],
                                         aspectRatio: '1/1',
                                         justifyContent: 'center',
-                                        position: 'relative'
+                                        position: 'relative',
+                                        cursor: 'pointer',
                                     }}
+                                    onClick={() => navigate(`/services/${service.urlSlug}`)}
                                 >
                                     <Typography variant='h4' component='h4' gutterBottom sx={{ textAlign: 'center' }}>
                                         {service.name}

@@ -4,4 +4,5 @@ export interface IServiceSummary {
     description: string;
     imageUrl: string;
     pageId: number;
+    urlSlug: string;
 }

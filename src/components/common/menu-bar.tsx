@@ -93,6 +93,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ className, currentSection }) => {
                 >
                     <Box
                         sx={{
+                            cursor: 'pointer',
                             position: 'relative',
                             width: isMobile ? 30 : 45,
                             height: isMobile ? 30 : 45,
