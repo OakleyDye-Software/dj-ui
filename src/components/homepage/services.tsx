@@ -3,9 +3,11 @@ import * as React from 'react';
 import serviceService from '../../services/serviceService';
 import { IServiceSummary } from '../../interfaces/IServiceSummary';
 import { useDJContext } from '../../logic/state/GlobalContext';
+import { useNavigate } from 'react-router-dom';
 
 const ServicesSection: React.FC = () => {
     const { isMobile, services, dispatch } = useDJContext();
+    const navigate = useNavigate();
 
     React.useEffect(() => {
         const getServices = async () => {
@@ -56,10 +58,12 @@ const ServicesSection: React.FC = () => {
                                 width: ['90%', '45%'], 
                                 aspectRatio: '1/1', 
                                 justifyContent: 'center', 
-                                position: 'relative' 
+                                position: 'relative',
+                                cursor: 'pointer'
                             }}
                             onMouseEnter={(e) => (e.currentTarget.children[1] as HTMLElement).style.height = '70%'}
                             onMouseLeave={(e) => (e.currentTarget.children[1] as HTMLElement).style.height = '0'}
+                            onClick={() => navigate(`/services/${service.urlSlug}`)}
                         >
                             <Typography variant={isMobile ? 'h6' : 'h4'} component="h4">{service.name}</Typography>
                             <Box 
