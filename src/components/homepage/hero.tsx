@@ -45,7 +45,7 @@ const HeroSection: React.FC = () => {
                     }}
                 />
 
-                <Box sx={{ zIndex: 1, textAlign: 'center' }}>
+                <Box sx={{ zIndex: 1, textAlign: 'center', mx: isMobile ? 2 : undefined }}>
                     <Typography variant={isMobile ? "h4" : "h1"} component="h1" gutterBottom>
                         Elevate your event with CD ENTERTAINMENT
                     </Typography>
