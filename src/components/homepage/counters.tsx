@@ -22,7 +22,7 @@ const Counters: React.FC = () => {
 
     return (  
         <React.Fragment>
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mx: isMobile ? 10 : undefined, py: 10, gap: isMobile ? 5 : 10 }}>
+            <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center', mx: isMobile ? 10 : undefined, py: 10, gap: isMobile ? 5 : 10 }}>
                 {counters?.map((counter) => (
                     <Counter count={counter.value} title={counter.name} showPlusIcon={counter.showPlus} />
                 ))}
