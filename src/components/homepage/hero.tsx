@@ -55,7 +55,7 @@ const HeroSection: React.FC = () => {
                         sx={{ 
                             px: 3, 
                             py: 1.2, 
-                            fontSize: '1.5rem', 
+                            fontSize: isMobile ? '1rem' : '1.5rem', 
                             borderRadius: 0 
                         }}
                         onClick={() => {
