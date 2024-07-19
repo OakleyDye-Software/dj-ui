@@ -3,14 +3,17 @@ import * as React from 'react';
 import MenuBar from '../common/menu-bar';
 import Footer from '../common/footer';
 import ContactForm from '../common/contact-form';
+import { useDJContext } from '../../logic/state/GlobalContext';
 
 const AboutPage: React.FC = () => {
+    const { isMobile } = useDJContext();
+
     return (  
         <React.Fragment>
             <MenuBar className='fixedMenuBar' currentSection='default' />
             <Container maxWidth="lg" sx={{ mt: 15 }}>
                 <Box my={4}>
-                    <Typography variant="h3" gutterBottom>
+                    <Typography sx={{ mx: isMobile ? 2 : undefined }} variant="h3" gutterBottom>
                         Welcome to CD Entertainment
                     </Typography>
                     <Typography variant="body1" paragraph>
@@ -125,7 +128,7 @@ const AboutPage: React.FC = () => {
                             <CardMedia
                             component="img"
                             height="300"
-                            image="./images/about_image3.jpg"
+                            image="./images/about.jpg"
                             alt="DJ at Work"
                             />
                         </Card>
