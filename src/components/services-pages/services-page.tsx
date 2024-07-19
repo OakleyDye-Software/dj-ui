@@ -33,7 +33,7 @@ const ServicesPage: React.FC = () => {
                     flexDirection: 'column',
                     justifyContent: 'center', 
                     alignItems: 'center', 
-                    pt: 10
+                    pt: 15
                 }}>
                     <Typography variant="h3" component="h3" gutterBottom color="primary" sx={{ textAlign: 'center' }}>
                         Services

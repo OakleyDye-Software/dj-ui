@@ -7,7 +7,7 @@ const GearRental: React.FC = () => {
     return (  
         <React.Fragment>
             <MenuBar className='fixedMenuBar' currentSection='default' />
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{ mt: 12 }}>
                 <Box my={4}>
                     <Typography variant="h3" gutterBottom>
                         Gear Rental
