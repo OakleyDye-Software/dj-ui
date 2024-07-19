@@ -62,13 +62,13 @@ const ContactPage: React.FC = () => {
                                 Follow Us
                             </Typography>
                             <Box>
-                                <Link href="https://facebook.com" target="_blank" rel="noopener">
+                                {/* <Link href="https://facebook.com" target="_blank" rel="noopener">
                                     <Facebook fontSize="large" />
                                 </Link>
                                 <Link href="https://twitter.com" target="_blank" rel="noopener">
                                     <Twitter fontSize="large" style={{ marginLeft: '10px' }} />
-                                </Link>
-                                <Link href="https://instagram.com" target="_blank" rel="noopener">
+                                </Link> */}
+                                <Link href="https://instagram.com/cdentertainment.co" target="_blank" rel="noopener">
                                     <Instagram fontSize="large" style={{ marginLeft: '10px' }} />
                                 </Link>
                             </Box>
