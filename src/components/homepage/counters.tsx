@@ -24,7 +24,7 @@ const Counters: React.FC = () => {
         <React.Fragment>
             <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'center', alignItems: 'center', mx: isMobile ? 10 : undefined, py: 10, gap: isMobile ? 5 : 10 }}>
                 {counters?.map((counter) => (
-                    <Counter count={counter.value} title={counter.name} showPlusIcon={counter.showPlus} />
+                    <Counter key={counter.name} count={counter.value} title={counter.name} showPlusIcon={counter.showPlus} />
                 ))}
             </Box>
         </React.Fragment>

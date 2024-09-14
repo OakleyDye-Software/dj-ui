@@ -13,7 +13,6 @@ const Pricing: React.FC = () => {
         const getPackages = async () => {
             await packageService.getPackages().then((data) => {
                 dispatch!({ type: 'SET_PRICE_PACKAGES', pricePackages: data });
-                console.log(data);
             });
         };
 
