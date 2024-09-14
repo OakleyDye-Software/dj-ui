@@ -7,6 +7,7 @@ import { IServiceSummary } from "../../interfaces/IServiceSummary";
 
 export interface DJState {
     isMobile: boolean;
+    acceptingRequests: boolean;
     currentSection: string;
     about: IAbout | null;
     services: IServiceSummary[];
@@ -19,6 +20,7 @@ export interface DJState {
 
 export const initialState: DJState = {
     isMobile: false,
+    acceptingRequests: false,
     currentSection: 'hero',
     about: null,
     services: [],
@@ -31,6 +33,11 @@ export const initialState: DJState = {
 interface ISetIsMobile {
     type: 'SET_IS_MOBILE';
     isMobile: boolean;
+}
+
+interface ISetAcceptingRequests {
+    type: 'SET_ACCEPTING_REQUESTS';
+    acceptingRequests: boolean;
 }
 
 interface ISetServices {
@@ -70,6 +77,7 @@ interface ISetFAQs {
 
 export type DJAction = 
     | ISetIsMobile
+    | ISetAcceptingRequests
     | ISetServices
     | ISetCurrentSection
     | ISetAbout
@@ -84,6 +92,11 @@ export const djReducer = (state: DJState, action: DJAction): DJState => {
             return {
                 ...state,
                 isMobile: action.isMobile
+            };
+        case 'SET_ACCEPTING_REQUESTS':
+            return {
+                ...state,
+                acceptingRequests: action.acceptingRequests
             };
         case 'SET_SERVICES':
             return {

@@ -17,6 +17,7 @@ import Testimonials from '../components/testimonials/testimonials';
 import Portfolio from '../components/portfolio/portfolio';
 import ContactPage from '../components/contact-page/contact-page';
 import RequestPage from '../components/requests/request';
+import SongRequestDashboard from '../components/requests/request-dashboard';
 
 const Router: React.FC = () => {
     return (  
@@ -28,6 +29,7 @@ const Router: React.FC = () => {
                 <Route path='/portfolio' element={<Portfolio />} />
                 <Route path='/contact' element={<ContactPage />} />
                 <Route path='/request' element={<RequestPage />} />
+                <Route path='/request-dashboard' element={<SongRequestDashboard />} />
 
                 <Route path="/services" element={<ServicesPage />} />
                 <Route path="/services/weddings" element={<Weddings />} />

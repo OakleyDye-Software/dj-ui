@@ -33,10 +33,43 @@ const archiveSongRequests = async () => {
     });
 }
 
+const archiveSongRequestById = async (ids: number[]) => {
+    return await httpService.delete(`/SongRequest`, { data: ids }).then((response) => {
+        if (response.status === 200) {
+            return response.data;
+        } else {
+            notify.error('Failed to archive song requests');
+        }
+    });
+}
+
+const getSongRequestSetting = async () => {
+    return await httpService.get(`/SongRequest/setting`).then((response) => {
+        if (response.status === 200) {
+            return response.data;
+        } else {
+            notify.error('Failed to get song request setting');
+        }
+    });
+}
+
+const toggleSongRequestSetting = async () => {
+    return await httpService.put(`/SongRequest/setting`).then((response) => {
+        if (response.status === 200) {
+            return response.data;
+        } else {
+            notify.error('Failed to toggle song request setting');
+        }
+    });
+}
+
 const songRequestService = {
     requestSong,
     getSongRequests,
-    archiveSongRequests
+    archiveSongRequests,
+    archiveSongRequestById,
+    getSongRequestSetting,
+    toggleSongRequestSetting
 };
 
 export default songRequestService;
